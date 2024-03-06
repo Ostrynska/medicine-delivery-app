@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchDrugs } from "../redux/shops/operations";
-import { addToCart } from "../redux/cart/slice";
+import {addToCart} from "../redux/cart/slice"
 
 const DrugsList = () => {
     const { id } = useParams();
@@ -12,23 +12,24 @@ const DrugsList = () => {
         dispatch(fetchDrugs(id));
     }, [dispatch, id]);
 
-    const drugs = useSelector(state => state.shops.drugsList);
-
-    const handleAddToCard = (item) => {
-        dispatch(addToCart(item));
+  const drugs = useSelector(state => state.shops.drugsList);
+  
+  const handleAddToCard = (item) => {
+    dispatch(addToCart(item));
     };
+
 
     return (
         <div>
             <h2>Medicines</h2>
             <ul>
-                {drugs.map(({ _id, name, photo, description, price }) => (
-                    <li key={_id}>
+                {drugs.map(({id, name, photo, description, price}) => (
+                    <li key={id}>
                         <h3 style={{ textTransform: 'capitalize' }}>{name}</h3>
-                        <img src={photo} alt={name} width={300} height={250} />
+                        <img src={photo} alt={name} width={300} height={250}/>
                         <p>{description}</p>
                         <p>{price}</p>
-                        <button onClick={() => handleAddToCard({ id, name, photo, description, price })}>Add</button>
+                        <button onClick={() => handleAddToCard({id, name, photo, description, price})}>Add</button>
                     </li>
                 ))}
             </ul>

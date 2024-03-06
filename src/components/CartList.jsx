@@ -1,7 +1,10 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { clearCart } from '../redux/cart/slice';
 
-const CartList = () => {
-  const cartList = useSelector(state => state.cart.cartList);
+const CartList = () =>
+{
+    const dispatch = useDispatch();
+    const cartList = useSelector(state => state.cart.cartList);
 
   const groupedItems = cartList.reduce((acc, item) => {
     if (acc[item.id]) {
@@ -14,9 +17,15 @@ const CartList = () => {
 
     const groupedItemsArray = Object.values(groupedItems);
 
+    const handleClearCart = () => {
+    dispatch(clearCart());
+  };
+
+
   return (
     <div>
-      <h2>Cart</h2>
+          <h2>Cart</h2>
+          <button onClick={handleClearCart}>Remove All</button>
       <ul>
         {groupedItemsArray.map(({ id, name, photo, description, price, count }) => (
           <li key={id}>

@@ -13,8 +13,8 @@ const DrugsList = () => {
     }, [dispatch, id]);
 
     const drugs = useSelector(state => state.shops.drugsList);
-  
-    const handleAddToCart = (item) => {
+
+    const handleAddToCard = (item) => {
         dispatch(addToCart(item));
     };
 
@@ -22,13 +22,13 @@ const DrugsList = () => {
         <div>
             <h2>Medicines</h2>
             <ul>
-                {drugs.map(({ name, photo, description, price }, index) => (
-                    <li key={index}>
+                {drugs.map(({ _id, name, photo, description, price }) => (
+                    <li key={_id}>
                         <h3 style={{ textTransform: 'capitalize' }}>{name}</h3>
-                        <img src={photo} alt={name} width={300} height={250}/>
+                        <img src={photo} alt={name} width={300} height={250} />
                         <p>{description}</p>
                         <p>{price}</p>
-                        <button onClick={() => handleAddToCart({ name, photo, description, price })}>Add</button>
+                        <button onClick={() => handleAddToCard({ id, name, photo, description, price })}>Add</button>
                     </li>
                 ))}
             </ul>

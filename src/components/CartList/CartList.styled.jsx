@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const CartWrapp = styled.div`
  margin-left: 120px;
- overflow-y: scroll;
  padding: 1.5rem 0;
  width: 696px;
 
@@ -16,6 +15,8 @@ export const CartWrapp = styled.div`
  }
  > ul {
   margin-top: 34px;
+  max-height: 505px;
+  overflow-y: scroll;
   > li {
    display: flex;
 

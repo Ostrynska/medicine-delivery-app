@@ -22,9 +22,8 @@ export const DrugsWrapp = styled.div`
   padding: 0px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
   justify-content: space-between;
-  gap: 10px;
+  gap: 30px;
   > li {
    display: flex;
    flex-direction: column;

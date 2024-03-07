@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export const HomeWrapp = styled.div`
  min-height: 88vh;
  display: flex;
- gap: 25px;
+ gap: 46px;
  width: 100%;
  padding-bottom: 8px;
 `;
@@ -13,7 +13,7 @@ export const ShopsWrapp = styled.div`
  flex-direction: column;
  align-items: center;
  overflow-y: scroll;
- ${'' /* height: fit-content; */}
+ height: fit-content;
 
  width: 320px;
  padding: 1.5rem;

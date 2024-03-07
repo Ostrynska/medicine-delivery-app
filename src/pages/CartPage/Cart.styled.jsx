@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const CartWrapp = styled.div`
- min-height: 88vh;
  width: 100%;
  padding-bottom: 8px;
  display: flex;

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
+
 import { fetchDrugs } from '../../redux/shops/operations';
 import { addToCart } from '../../redux/cart/slice';
 
@@ -9,6 +10,7 @@ import {
  Line,
  PriceWrapp,
  ImageWrapp,
+ TextWrapp,
  Button,
 } from './DrugsList.styled';
 
@@ -35,9 +37,11 @@ const DrugsList = () => {
       <ImageWrapp>
        <img src={photo} alt={name} width={300} height={200} loading="lazy" />
       </ImageWrapp>
-      <h3 style={{ textTransform: 'capitalize' }}>{name}</h3>
+      <h3>{name}</h3>
       <Line />
-      <p>{description}</p>
+      <TextWrapp>
+       <p>{description}</p>
+      </TextWrapp>
       <PriceWrapp>
        <p>{price}</p>
        <Button

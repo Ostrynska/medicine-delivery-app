@@ -6,7 +6,7 @@ import Loader from './Loader/Loader';
 import '../styles/index.css';
 
 const Home = lazy(() => import('../pages/HomePage/Home'));
-const Cart = lazy(() => import('../pages/Cart'));
+const Cart = lazy(() => import('../pages/CartPage/Cart'));
 const DrugsList = lazy(() => import('./DrugsList/DrugsList'));
 
 export const App = () => {

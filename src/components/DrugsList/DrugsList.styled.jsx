@@ -6,7 +6,9 @@ export const DrugsWrapp = styled.div`
  flex-direction: column;
  align-items: center;
 
- min-width: 300px;
+ width: 855px;
+ overflow-y: scroll;
+ padding: 1.5rem 0 0 0;
 
  > h2 {
   padding: 0 0 20px 0;
@@ -21,10 +23,12 @@ export const DrugsWrapp = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
+  justify-content: space-between;
   gap: 10px;
   > li {
    display: flex;
    flex-direction: column;
+   justify-content: space-evenly;
 
    padding: 1.5rem;
    border: 1px solid rgba(0, 0, 0, 0.1);
@@ -32,17 +36,15 @@ export const DrugsWrapp = styled.div`
    max-width: 100%;
    background-color: white;
    transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+   cursor: pointer;
    &:hover,
    &:focus {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
    }
-   > p {
-    font-size: 14px;
-    max-width: 340px;
-    margin: 1rem 0px 0.5rem;
-    font-family: Raleway, sans-serif;
+   > h3 {
+    text-transform: capitalize;
    }
   }
  }
@@ -76,9 +78,25 @@ export const Line = styled.hr`
  opacity: 0.25;
 `;
 
+export const TextWrapp = styled.div`
+ overflow-y: scroll;
+ max-width: 340px;
+ > p {
+  font-size: 14px;
+  margin: 1rem 0px 0.5rem;
+  font-family: Raleway, sans-serif;
+ }
+`;
+
 export const PriceWrapp = styled.div`
  display: flex;
  justify-content: space-between;
+ align-items: center;
+ > p {
+  font-size: 18px;
+  font-weight: 600;
+  color: orangered;
+ }
 `;
 
 export const ImageWrapp = styled.div`

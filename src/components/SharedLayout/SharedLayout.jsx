@@ -11,7 +11,7 @@ export const SharedLayout = () => {
     <Logo to="/shops">
      <span role="img" aria-label="medicine icon">
       💊
-     </span>{' '}
+     </span>
      Medicine Delivery
     </Logo>
     <nav>

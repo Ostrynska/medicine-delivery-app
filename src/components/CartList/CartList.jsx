@@ -48,34 +48,40 @@ const CartList = () => {
      <Button onClick={handleClearCart}>Remove All</Button>
     </ButtonWrapp>
    )}
-   <ul>
-    {cartList.map(({ id, name, photo, count }) => (
-     <li key={id}>
-      <ImageWrapp>
-       <img src={photo} alt={name} width={100} height={100} />
-      </ImageWrapp>
+   {cartList.length > 0 ? (
+    <ul>
+     {cartList.map(({ id, name, photo, count }) => (
+      <li key={id}>
+       <ImageWrapp>
+        <img src={photo} alt={name} width={100} height={100} />
+       </ImageWrapp>
 
-      <Content>
-       <h3>{name}</h3>
-       <PriceWrapp>
-        <Text>Count:</Text>
-        <InputWrapp>
-         <Input
-          type="number"
-          value={count}
-          onChange={e => handleQuantityChange(id, e)}
-          min={1}
-          max={100}
-         />
-         <ButtonDelete onClick={() => handleRemoveItem(id)}>
-          Remove
-         </ButtonDelete>
-        </InputWrapp>
-       </PriceWrapp>
-      </Content>
-     </li>
-    ))}
-   </ul>
+       <Content>
+        <h3>{name}</h3>
+        <PriceWrapp>
+         <Text>Count:</Text>
+         <InputWrapp>
+          <Input
+           type="number"
+           value={count}
+           onChange={e => handleQuantityChange(id, e)}
+           min={1}
+           max={100}
+          />
+          <ButtonDelete onClick={() => handleRemoveItem(id)}>
+           Remove
+          </ButtonDelete>
+         </InputWrapp>
+        </PriceWrapp>
+       </Content>
+      </li>
+     ))}
+    </ul>
+   ) : (
+    <div style={{ height: 505, paddingTop: '50px' }}>
+     <p>Empty</p>
+    </div>
+   )}
    <PriceText>
     Total Price: <span>{totalPrice}</span>
    </PriceText>

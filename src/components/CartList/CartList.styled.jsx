@@ -15,7 +15,7 @@ export const CartWrapp = styled.div`
  }
  > ul {
   margin-top: 34px;
-  max-height: 505px;
+  height: 510px;
   overflow-y: scroll;
   > li {
    display: flex;

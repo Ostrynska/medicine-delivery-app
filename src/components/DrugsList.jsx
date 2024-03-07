@@ -16,7 +16,7 @@ const DrugsList = () => {
   
   const handleAddToCard = (item) => {
     dispatch(addToCart(item));
-    };
+ };
 
 
     return (

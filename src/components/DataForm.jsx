@@ -39,7 +39,6 @@ const DataForm = () => {
         <label htmlFor="address">Address:</label>
         <textarea id="address" name="address" value={formData.address} onChange={handleChange} />
       </div>
-      <button type="submit">Submit</button>
     </form>
   );
 };

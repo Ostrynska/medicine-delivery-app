@@ -25,7 +25,7 @@ const CartList = () => {
     return (
         <div>
             <h2>Cart</h2>
-            <button onClick={handleClearCart}>Remove All</button>
+            {cartList.length > 0 && <button onClick={handleClearCart}>Remove All</button>}
             <ul>
                 {cartList.map(({ id, name, photo, description, price, count }) => (
                     <li key={id}>
@@ -47,6 +47,7 @@ const CartList = () => {
                     </li>
                 ))}
             </ul>
+            {/* {cartList.length > 0 && <p>Total Price: {totalPrice}</p>} */}
             <p>Total Price: {totalPrice}</p>
         </div>
     );

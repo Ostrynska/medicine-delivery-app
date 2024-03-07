@@ -1,46 +1,44 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 
-const DataForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    address: ''
-  });
+const DataForm = React.forwardRef((props, ref) => {
+  const nameRef = useRef('');
+  const emailRef = useRef('');
+  const phoneRef = useRef('');
+  const addressRef = useRef('');
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
+  const getData = () => {
+    return {
+      name: nameRef.current.value,
+      email: emailRef.current.value,
+      phone: phoneRef.current.value,
+      address: addressRef.current.value
+    };
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-  };
+  React.useImperativeHandle(ref, () => ({
+    getData
+  }));
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <div>
         <label htmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
+        <input type="text" id="name" ref={nameRef} />
       </div>
       <div>
         <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} />
+        <input type="email" id="email" ref={emailRef} />
       </div>
       <div>
         <label htmlFor="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} />
+        <input type="tel" id="phone" ref={phoneRef} />
       </div>
       <div>
         <label htmlFor="address">Address:</label>
-        <textarea id="address" name="address" value={formData.address} onChange={handleChange} />
+        <textarea id="address" ref={addressRef} />
       </div>
     </form>
   );
-};
+});
 
 export default DataForm;

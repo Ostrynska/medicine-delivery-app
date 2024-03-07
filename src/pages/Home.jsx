@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink, Outlet } from "react-router-dom"; // Імпортуйте Outlet з react-router-dom
+import { NavLink, Outlet } from "react-router-dom";
 import { fetchAllShops } from "../redux/shops/operations";
 
 const Home = () => {

@@ -13,11 +13,10 @@ const DrugsList = () => {
     }, [dispatch, id]);
 
   const drugs = useSelector(state => state.shops.drugsList);
-  
+
   const handleAddToCard = (item) => {
     dispatch(addToCart(item));
  };
-
 
     return (
         <div>

@@ -6,7 +6,7 @@ import CartList from '../../components/CartList/CartList';
 import { addToOrder } from '../../services/orders-api';
 import { clearCart } from '../../redux/cart/slice';
 
-import { CartWrapp } from './Cart.styled';
+import { CartWrapp, SubmitWrapp, Button } from './Cart.styled';
 
 const Cart = () => {
  const dispatch = useDispatch();
@@ -54,9 +54,11 @@ const Cart = () => {
      <UserForm ref={formDataRef} />
      <CartList />
     </CartWrapp>
-    <button type="submit" onClick={handleSubmit}>
-     Submit
-    </button>
+    <SubmitWrapp>
+     <Button type="submit" onClick={handleSubmit}>
+      Submit
+     </Button>
+    </SubmitWrapp>
    </section>
   </main>
  );

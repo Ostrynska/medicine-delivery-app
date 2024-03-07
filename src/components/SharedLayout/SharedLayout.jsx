@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Loader from '../Loader/Loader';
+import Footer from '../Footer/Footer';
 import { Container, Header, Logo, Link } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
@@ -24,6 +25,7 @@ export const SharedLayout = () => {
    <Suspense fallback={<Loader />}>
     <Outlet />
    </Suspense>
+   <Footer />
   </Container>
  );
 };

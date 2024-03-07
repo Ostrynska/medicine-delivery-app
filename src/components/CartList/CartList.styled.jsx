@@ -15,7 +15,7 @@ export const CartWrapp = styled.div`
   font-family: 'Sulphur Point', sans-serif;
  }
  > ul {
-  margin-top: 40px;
+  margin-top: 34px;
   > li {
    display: flex;
 
@@ -79,14 +79,30 @@ export const Button = styled.button`
  }
 `;
 
+export const ButtonDelete = styled(Button)`
+ background-color: grey;
+ color: white;
+
+ &:hover,
+ &:focus {
+  background-color: orangered;
+ }
+`;
+
 export const Input = styled.input`
  margin-left: 20px;
  width: 90px;
- padding: 10px 12px;
+ padding: 8px 12px;
  border-radius: 8px;
  border: 1px solid #ccc;
  color: rgb(63, 63, 63);
  margin-right: 10px;
+ transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+
+ &:hover,
+ &:focus {
+  border-color: orangered;
+ }
 `;
 
 export const InputWrapp = styled.div``;

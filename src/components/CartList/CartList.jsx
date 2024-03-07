@@ -15,8 +15,9 @@ import {
  Input,
  InputWrapp,
  PriceText,
+ ButtonDelete,
 } from './CartList.styled';
-import { Line, ImageWrapp, PriceWrapp } from '../DrugsList/DrugsList.styled';
+import { ImageWrapp, PriceWrapp } from '../DrugsList/DrugsList.styled';
 
 const CartList = () => {
  const dispatch = useDispatch();
@@ -56,7 +57,6 @@ const CartList = () => {
 
       <Content>
        <h3>{name}</h3>
-       <Line />
        <PriceWrapp>
         <Text>Count:</Text>
         <InputWrapp>
@@ -67,7 +67,9 @@ const CartList = () => {
           min={1}
           max={100}
          />
-         <Button onClick={() => handleRemoveItem(id)}>Remove</Button>
+         <ButtonDelete onClick={() => handleRemoveItem(id)}>
+          Remove
+         </ButtonDelete>
         </InputWrapp>
        </PriceWrapp>
       </Content>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Outlet } from 'react-router-dom';
+
 import { fetchAllShops } from '../../redux/shops/operations';
 
 import { HomeWrapp, ShopsWrapp, Link } from './Home.styled';

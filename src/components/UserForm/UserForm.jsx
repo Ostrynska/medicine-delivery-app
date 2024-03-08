@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 
 import {
  FormContainer,
@@ -9,22 +9,29 @@ import {
 } from './UserForm.styled';
 
 const UserForm = React.forwardRef((props, ref) => {
- const nameRef = useRef('');
- const emailRef = useRef('');
- const phoneRef = useRef('');
- const addressRef = useRef('');
+ const [formData, setFormData] = useState({
+  name: '',
+  email: '',
+  phone: '',
+  address: '',
+ });
 
  const getData = () => {
-  return {
-   name: nameRef.current.value,
-   email: emailRef.current.value,
-   phone: phoneRef.current.value,
-   address: addressRef.current.value,
-  };
+  return formData;
+ };
+
+ const clearFormValues = () => {
+  setFormData({
+   name: '',
+   email: '',
+   phone: '',
+   address: '',
+  });
  };
 
  React.useImperativeHandle(ref, () => ({
   getData,
+  clearFormValues,
  }));
 
  return (
@@ -32,19 +39,42 @@ const UserForm = React.forwardRef((props, ref) => {
    <h2>Shipping Information</h2>
    <FormGroup>
     <Label htmlFor="name">Name</Label>
-    <Input type="text" id="name" ref={nameRef} required />
+    <Input
+     type="text"
+     id="name"
+     value={formData.name}
+     onChange={e => setFormData({ ...formData, name: e.target.value })}
+     required
+    />
    </FormGroup>
    <FormGroup>
     <Label htmlFor="email">Email</Label>
-    <Input type="email" id="email" ref={emailRef} required />
+    <Input
+     type="email"
+     id="email"
+     value={formData.email}
+     onChange={e => setFormData({ ...formData, email: e.target.value })}
+     required
+    />
    </FormGroup>
    <FormGroup>
     <Label htmlFor="phone">Phone</Label>
-    <Input type="tel" id="phone" ref={phoneRef} required />
+    <Input
+     type="tel"
+     id="phone"
+     value={formData.phone}
+     onChange={e => setFormData({ ...formData, phone: e.target.value })}
+     required
+    />
    </FormGroup>
    <FormGroup>
     <Label htmlFor="address">Address</Label>
-    <TextArea id="address" ref={addressRef} required />
+    <TextArea
+     id="address"
+     value={formData.address}
+     onChange={e => setFormData({ ...formData, address: e.target.value })}
+     required
+    />
    </FormGroup>
   </FormContainer>
  );

@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 
 import { fetchAllShops } from '../../redux/shops/operations';
 
-import { HomeWrapp, ShopsWrapp, Link, Main } from './Home.styled';
+import { HomeWrapp, ShopsWrapp, Link } from './Home.styled';
 
 const Home = () => {
  const dispatch = useDispatch();

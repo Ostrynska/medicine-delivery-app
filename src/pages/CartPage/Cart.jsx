@@ -6,7 +6,7 @@ import CartList from '../../components/CartList/CartList';
 import { addToOrder } from '../../services/orders-api';
 import { clearCart } from '../../redux/cart/slice';
 
-import { CartWrapp, SubmitWrapp, Button, Main } from './Cart.styled';
+import { CartWrapp, SubmitWrapp, Button } from './Cart.styled';
 
 const Cart = () => {
  const dispatch = useDispatch();

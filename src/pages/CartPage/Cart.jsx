@@ -52,7 +52,7 @@ const Cart = () => {
  };
 
  return (
-  <Main>
+  <>
    <h1 hidden>Shopping cart</h1>
    <section>
     <CartWrapp>
@@ -65,7 +65,7 @@ const Cart = () => {
      </Button>
     </SubmitWrapp>
    </section>
-  </Main>
+  </>
  );
 };
 

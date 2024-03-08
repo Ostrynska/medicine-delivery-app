@@ -27,14 +27,6 @@ const UserForm = React.forwardRef((props, ref) => {
   getData,
  }));
 
- // eslint-disable-next-line
- const clearFormValues = () => {
-  nameRef.current.value = '';
-  emailRef.current.value = '';
-  phoneRef.current.value = '';
-  addressRef.current.value = '';
- };
-
  return (
   <FormContainer ref={ref}>
    <h2>Shipping Information</h2>

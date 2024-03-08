@@ -41,8 +41,7 @@ const Cart = () => {
 
   try {
    await addToOrder(orderData);
-   formDataRef.current.clearFormValues();
-   //    formData.current.reset();
+   formDataRef.current.reset();
    dispatch(clearCart());
    alert(
     `We got it! Order number: ${generateRandomNumber()}. Check your inbox shortly for a confirmation email.`

@@ -28,7 +28,7 @@ const UserForm = React.forwardRef((props, ref) => {
  }));
 
  return (
-  <FormContainer>
+  <FormContainer ref={formDataRef}>
    <h2>Shipping Information</h2>
    <FormGroup>
     <Label htmlFor="name">Name</Label>

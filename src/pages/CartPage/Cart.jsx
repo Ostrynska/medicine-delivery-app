@@ -18,6 +18,10 @@ const Cart = () => {
   return shops.find(shop => shop.drugslist.some(item => item.id === id));
  };
 
+ const generateRandomNumber = () => {
+  return Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
+ };
+
  const handleSubmit = async e => {
   e.preventDefault();
   const formData = formDataRef.current.getData();
@@ -26,21 +30,24 @@ const Cart = () => {
    drugslist: cartList.map(item => {
     const shopProduct = findShopProductById(item.id, shops);
     return {
-     drug: item.name,
-     price: item.price,
-     quantity: item.count,
-     totalPrice: item.price * item.count,
      shop: shopProduct.name,
+     name: item.name,
+     price: item.price,
+     count: item.count,
+     totalPrice: item.price * item.count,
     };
    }),
   };
-  console.log(orderData);
 
   try {
    await addToOrder(orderData);
-   console.log(addToOrder(orderData));
-   dispatch(clearCart());
+   //   clearFormValues();
    formDataRef.current.reset();
+   //    formData.current.reset();
+   dispatch(clearCart());
+   alert(
+    `We got it! Order number: ${generateRandomNumber()}. Check your inbox shortly for a confirmation email.`
+   );
   } catch (error) {
    console.error('Error while adding order:', error);
   }

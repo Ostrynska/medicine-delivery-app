@@ -30,6 +30,7 @@ export const App = () => {
    <SharedLayout />
    {/* <main> */}
    <Routes>
+    <Route index element={<Home />} />
     <Route path="/shops" element={<Home />}>
      <Route path=":id" element={<DrugsList />} />
     </Route>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { FooterWrapp } from './Footer.styled';
 
 function Footer() {

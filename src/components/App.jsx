@@ -1,5 +1,5 @@
 import React, { useEffect, useState, lazy, Suspense } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import Loader from './Loader/Loader';
 
@@ -26,11 +26,12 @@ export const App = () => {
    ) : (
     <Routes>
      <Route path="/" element={<SharedLayout />}>
-      <Route index path="/shops" element={<Home />} />
-      <Route path=":id" element={<DrugsList />} />
+      <Route index path="/shops" element={<Home />}>
+       <Route path=":id" element={<DrugsList />} />
+      </Route>
+      <Route path="/cart" element={<Cart />} />
+      <Route path="*" element={<p>Path not resolved</p>} />
      </Route>
-     <Route path="/cart" element={<Cart />} />
-     <Route path="*" element={<p>Path not resolved</p>} />
     </Routes>
    )}
   </Suspense>

@@ -7,6 +7,7 @@ import { addToOrder } from '../../services/orders-api';
 import { clearCart } from '../../redux/cart/slice';
 
 import { CartWrapp, SubmitWrapp, Button } from './Cart.styled';
+import { SharedLayout } from '../../components/SharedLayout/SharedLayout';
 
 const Cart = () => {
  const dispatch = useDispatch();
@@ -52,20 +53,22 @@ const Cart = () => {
  };
 
  return (
-  <main>
-   <h1 hidden>Shopping cart</h1>
-   <section>
-    <CartWrapp>
-     <UserForm ref={formDataRef} />
-     <CartList />
-    </CartWrapp>
-    <SubmitWrapp>
-     <Button type="submit" onClick={handleSubmit}>
-      Submit
-     </Button>
-    </SubmitWrapp>
-   </section>
-  </main>
+  <SharedLayout>
+   <main>
+    <h1 hidden>Shopping cart</h1>
+    <section>
+     <CartWrapp>
+      <UserForm ref={formDataRef} />
+      <CartList />
+     </CartWrapp>
+     <SubmitWrapp>
+      <Button type="submit" onClick={handleSubmit}>
+       Submit
+      </Button>
+     </SubmitWrapp>
+    </section>
+   </main>
+  </SharedLayout>
  );
 };
 

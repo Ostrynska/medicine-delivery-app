@@ -27,13 +27,15 @@ export const App = () => {
    ) : (
     <>
      <SharedLayout />
-     <Routes>
-      <Route index path="/shops" element={<Home />}>
-       <Route path=":id" element={<DrugsList />} />
-      </Route>
-      <Route path="/cart" element={<Cart />} />
-      <Route path="*" element={<p>Path not resolved</p>} />
-     </Routes>
+     <main>
+      <Routes>
+       <Route index path="/shops" element={<Home />}>
+        <Route path=":id" element={<DrugsList />} />
+       </Route>
+       <Route path="/cart" element={<Cart />} />
+       <Route path="*" element={<p>Path not resolved</p>} />
+      </Routes>
+     </main>
      <Footer />
     </>
    )}

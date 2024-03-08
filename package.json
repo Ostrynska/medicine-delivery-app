@@ -27,8 +27,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "lint:js": "eslint src/**/*.js"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -50,8 +49,6 @@
   },
   "devDependencies": {
     "envify": "^4.1.0",
-    "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-jest": "^27.9.0",
     "gh-pages": "^6.1.1",
     "terser": "^5.28.1",
     "uglifyify": "^5.0.0"

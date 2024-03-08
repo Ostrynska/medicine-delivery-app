@@ -1,6 +1,3 @@
----
-permalink: /index.html
----
 <h1> 📎Medicine Delivery App - test task for ElifTech Et-School </h1>
 
 <p>The app is a web-based application that allows users to order medicines delivery.</p>

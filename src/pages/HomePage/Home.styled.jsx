@@ -1,6 +1,21 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+export const Main = styled.main`
+ max-width: 360px;
+ margin: 0 auto;
+ padding: 0 16px;
+ @media screen and (min-width: 576px) {
+  max-width: 540px;
+ }
+ @media screen and (min-width: 768px) {
+  max-width: 720px;
+ }
+ @media screen and (min-width: 1200px) {
+  max-width: 1200px;
+ }
+`;
+
 export const HomeWrapp = styled.div`
  min-height: 88vh;
  display: flex;

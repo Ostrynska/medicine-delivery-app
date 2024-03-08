@@ -6,7 +6,7 @@ import CartList from '../../components/CartList/CartList';
 import { addToOrder } from '../../services/orders-api';
 import { clearCart } from '../../redux/cart/slice';
 
-import { CartWrapp, SubmitWrapp, Button } from './Cart.styled';
+import { CartWrapp, SubmitWrapp, Button, Main } from './Cart.styled';
 
 const Cart = () => {
  const dispatch = useDispatch();
@@ -52,7 +52,7 @@ const Cart = () => {
  };
 
  return (
-  <main>
+  <Main>
    <h1 hidden>Shopping cart</h1>
    <section>
     <CartWrapp>
@@ -65,7 +65,7 @@ const Cart = () => {
      </Button>
     </SubmitWrapp>
    </section>
-  </main>
+  </Main>
  );
 };
 

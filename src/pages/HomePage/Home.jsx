@@ -20,7 +20,7 @@ const Home = () => {
  };
 
  return (
-  <Main>
+  <>
    <h1 hidden>Medicine Delivery Shops</h1>
    <section>
     <HomeWrapp
@@ -46,7 +46,7 @@ const Home = () => {
      <Outlet />
     </HomeWrapp>
    </section>
-  </Main>
+  </>
  );
 };
 

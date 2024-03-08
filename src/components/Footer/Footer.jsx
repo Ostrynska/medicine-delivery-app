@@ -2,7 +2,7 @@ import { FooterWrapp } from './Footer.styled';
 
 function Footer() {
  return (
-  <FooterWrapp fluid={true}>
+  <FooterWrapp>
    <p>
     © <strong>Ostrynska Kateryna🇺🇦</strong> {new Date().getFullYear()}. All
     rights are reserved{' '}

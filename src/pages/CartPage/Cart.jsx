@@ -41,8 +41,7 @@ const Cart = () => {
 
   try {
    await addToOrder(orderData);
-   //   clearFormValues();
-   formDataRef.current.reset();
+   formDataRef.current.clearFormValues();
    //    formData.current.reset();
    dispatch(clearCart());
    alert(

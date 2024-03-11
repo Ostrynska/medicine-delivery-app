@@ -33,8 +33,8 @@ export const App = () => {
        </SharedLayout>
       }
      >
-      <Route index element={<Home />} />
-      <Route path="shops" element={<Home />} />
+      <Route index path="/shops" element={<Home />} />
+      {/* <Route element={<Home />} /> */}
       <Route path="shops/:id" element={<DrugsList />} />
       <Route path="cart" element={<Cart />} />
       <Route path="*" element={<p>Path not resolved</p>} />

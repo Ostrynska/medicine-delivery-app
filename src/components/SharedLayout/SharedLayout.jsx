@@ -1,5 +1,7 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
+import { Footer } from '../Footer/Footer';
 import { Container, Header, Logo, Link } from './SharedLayout.styled';
 
 export const SharedLayout = () => {
@@ -19,6 +21,8 @@ export const SharedLayout = () => {
      <Link to="/cart">Shopping Cart</Link>
     </nav>
    </Header>
+   <Outlet />
+   <Footer />
   </Container>
  );
 };

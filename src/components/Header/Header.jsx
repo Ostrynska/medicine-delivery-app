@@ -1,10 +1,10 @@
 import React from 'react';
 
-import { Header, Logo, Link } from './SharedLayout.styled';
+import { HeaderWrapp, Logo, Link } from './Header.styled';
 
-export const SharedLayout = () => {
+const Header = () => {
  return (
-  <Header>
+  <HeaderWrapp>
    <Logo to="/shops">
     <span role="img" aria-label="medicine icon">
      💊
@@ -17,6 +17,8 @@ export const SharedLayout = () => {
     </Link>
     <Link to="/cart">Shopping Cart</Link>
    </nav>
-  </Header>
+  </HeaderWrapp>
  );
 };
+
+export default Header;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, lazy, Suspense } from 'react';
+import React, { useEffect, useState, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 // import { SharedLayout } from './SharedLayout/SharedLayout';
 import Loader from './Loader/Loader';
@@ -21,7 +21,7 @@ export const App = () => {
  }, []);
 
  return (
-  <Suspense fallback={<Loader />}>
+  <>
    {loading ? (
     <Loader />
    ) : (
@@ -33,6 +33,6 @@ export const App = () => {
      <Route path="*" element={<p>Path not resolved</p>} />
     </Routes>
    )}
-  </Suspense>
+  </>
  );
 };

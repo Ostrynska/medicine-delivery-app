@@ -12,24 +12,16 @@ const DrugsList = lazy(() => import('./DrugsList/DrugsList'));
 
 export const App = () => {
  return (
-  <>
+  <Container>
+   <SharedLayout />
    <Routes>
-    <Route
-     element={
-      <Container>
-       <SharedLayout />
-       <Outlet />
-       <Footer />
-      </Container>
-     }
-    >
-     <Route path="shops" element={<Home />}>
-      <Route path=":id" element={<DrugsList />} />
-     </Route>
-     <Route path="cart" element={<Cart />} />
-     <Route path="*" element={<p>Path not resolved</p>} />
+    <Route path="/shops" element={<Home />}>
+     <Route path=":id" element={<DrugsList />} />
     </Route>
+    <Route path="/cart" element={<Cart />} />
+    <Route path="*" element={<p>Path not resolved</p>} />
    </Routes>
-  </>
+   <Footer />
+  </Container>
  );
 };

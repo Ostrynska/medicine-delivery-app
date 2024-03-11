@@ -1,4 +1,4 @@
-<h1> 📎Medicine Delivery App - test task for ElifTech Et-School </h1>
+<h1>📎Medicine Delivery App</h1>
 
 <p>The app is a web-based application that allows users to order medicines delivery.</p>
 

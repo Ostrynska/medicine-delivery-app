@@ -2,7 +2,7 @@ import React, { lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import '../styles/index.css';
-// import { Container } from './Header/Header.styled';
+import { Container } from './Header/Header.styled';
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
@@ -17,7 +17,7 @@ const DrugsList = lazy(() => import('./DrugsList/DrugsList'));
 
 export const App = () => {
  return (
-  <>
+  <Container>
    <Header />
    <main>
     <Routes>
@@ -29,6 +29,6 @@ export const App = () => {
     </Routes>
    </main>
    <Footer />
-  </>
+  </Container>
  );
 };

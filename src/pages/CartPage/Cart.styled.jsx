@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const CartWrapp = styled.div`
  width: 100%;
+ min-height: 88vh;
  padding-bottom: 8px;
  display: flex;
  justify-content: space-between;

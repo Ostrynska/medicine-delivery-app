@@ -2,7 +2,6 @@ import React, { useEffect, useState, lazy, Suspense } from 'react';
 import { Route, Routes, Outlet } from 'react-router-dom';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 import Loader from './Loader/Loader';
-// import Footer from './Footer/Footer';
 
 import '../styles/index.css';
 
@@ -20,6 +19,7 @@ export const App = () => {
   }, delay);
   return () => clearTimeout(timer);
  }, []);
+
  return (
   <Suspense fallback={<Loader />}>
    {loading ? (
@@ -33,7 +33,7 @@ export const App = () => {
        </SharedLayout>
       }
      >
-      <Route index path="/shops" element={<Home />}>
+      <Route path="/shops" element={<Home />}>
        <Route path=":id" element={<DrugsList />} />
       </Route>
       <Route path="/cart" element={<Cart />} />

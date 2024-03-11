@@ -1,6 +1,6 @@
 import React, { useEffect, useState, lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { SharedLayout } from './SharedLayout/SharedLayout';
+// import { SharedLayout } from './SharedLayout/SharedLayout';
 import Loader from './Loader/Loader';
 
 import '../styles/index.css';
@@ -25,15 +25,13 @@ export const App = () => {
    {loading ? (
     <Loader />
    ) : (
-    <SharedLayout>
-     <Routes>
-      <Route index path="/shops" element={<Home />}>
-       <Route path="/:id" element={<DrugsList />} />
-      </Route>
-      <Route path="cart" element={<Cart />} />
-      <Route path="*" element={<p>Path not resolved</p>} />
-     </Routes>
-    </SharedLayout>
+    <Routes>
+     <Route path="shops" element={<Home />}>
+      <Route path="/:id" element={<DrugsList />} />
+     </Route>
+     <Route path="cart" element={<Cart />} />
+     <Route path="*" element={<p>Path not resolved</p>} />
+    </Routes>
    )}
   </Suspense>
  );

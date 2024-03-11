@@ -25,21 +25,15 @@ export const App = () => {
    {loading ? (
     <Loader />
    ) : (
-    <Routes>
-     <Route
-      element={
-       <SharedLayout>
-        <Outlet />
-       </SharedLayout>
-      }
-     >
-      <Route index path="/shops" element={<Home />} />
-      {/* <Route element={<Home />} /> */}
-      <Route path="shops/:id" element={<DrugsList />} />
+    <SharedLayout>
+     <Routes>
+      <Route index path="/shops" element={<Home />}>
+       <Route path="/:id" element={<DrugsList />} />
+      </Route>
       <Route path="cart" element={<Cart />} />
       <Route path="*" element={<p>Path not resolved</p>} />
-     </Route>
-    </Routes>
+     </Routes>
+    </SharedLayout>
    )}
   </Suspense>
  );

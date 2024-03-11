@@ -1,8 +1,8 @@
 import React, { useEffect, useState, lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { SharedLayout } from './SharedLayout/SharedLayout';
+// import { SharedLayout } from './SharedLayout/SharedLayout';
 import Loader from './Loader/Loader';
-import Footer from './Footer/Footer';
+// import Footer from './Footer/Footer';
 
 import '../styles/index.css';
 

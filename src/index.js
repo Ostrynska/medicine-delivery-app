@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import React, { StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';

@@ -2,7 +2,7 @@ import React, { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import '../styles/index.css';
-import { Container } from './Header/Header.styled';
+// import { Container } from './Header/Header.styled';
 
 import Header from './Header/Header';
 import Footer from './Footer/Footer';

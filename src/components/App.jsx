@@ -25,14 +25,13 @@ export const App = () => {
     <Loader />
    ) : (
     <Routes>
-     <Route path="/" element={<SharedLayout />}>
-      <Route path="/" element={<Navigate to="/shops" />} />
-      <Route path="/shops" element={<Home />}>
-       <Route path=":id" element={<DrugsList />} />
-      </Route>
-      <Route path="/cart" element={<Cart />} />
-      <Route path="*" element={<p>Path not resolved</p>} />
+     {/* <Route path="/" element={<SharedLayout />}> */}
+     <Route path="/shops" element={<Home />}>
+      <Route path=":id" element={<DrugsList />} />
      </Route>
+     <Route path="/cart" element={<Cart />} />
+     <Route path="*" element={<p>Path not resolved</p>} />
+     {/* </Route> */}
     </Routes>
    )}
   </Suspense>

@@ -18,15 +18,19 @@ import {
  PriceText,
  ButtonDelete,
 } from './CartList.styled';
-import { ImageWrapp, PriceWrapp } from '../DrugsList/DrugsList.styled';
+import { ImageWrapp, PriceWrapp } from '../DrugsItem/DrugsItem.styled';
 
 const CartList = () => {
  const dispatch = useDispatch();
  const cartList = useSelector(state => state.cart.cartList);
 
- const totalPrice = cartList.reduce((total, item) => {
-  return total + item.price * item.count;
- }, 0);
+ const totalPrice = parseFloat(
+  cartList
+   .reduce((total, item) => {
+    return total + item.price * item.count;
+   }, 0)
+   .toFixed(2)
+ );
 
  const handleQuantityChange = (id, e) => {
   const newQuantity = parseInt(e.target.value);

@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 
+import { getShops } from '../../redux/shops/selectors';
 import { fetchAllShops } from '../../redux/shops/operations';
 
 import { HomeWrapp, ShopsWrapp, Link } from './Home.styled';
 
 const Home = () => {
  const dispatch = useDispatch();
- const shops = useSelector(state => state.shops.items);
+ const shops = useSelector(getShops);
  const [backgroundLoaded, setBackgroundLoaded] = useState(false);
 
  useEffect(() => {
@@ -20,7 +21,7 @@ const Home = () => {
  };
 
  return (
-  <main>
+  <>
    <h1 hidden>Medicine Delivery Shops</h1>
    <section>
     <HomeWrapp
@@ -46,7 +47,7 @@ const Home = () => {
      <Outlet />
     </HomeWrapp>
    </section>
-  </main>
+  </>
  );
 };
 

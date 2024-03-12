@@ -21,7 +21,10 @@ const Cart = () => {
  }, [cartList]);
 
  const findShopProductById = (id, shops) => {
-  return shops.find(shop => shop.drugslist.some(item => item.id === id));
+  const shopProduct = shops.find(shop =>
+   shop.drugslist.some(item => item.id === id)
+  );
+  return shopProduct ? shopProduct.name : null;
  };
 
  const generateRandomNumber = () => {
@@ -31,18 +34,34 @@ const Cart = () => {
  const handleSubmit = async e => {
   e.preventDefault();
   const formData = formDataRef.current.getData();
+  const findShop = cartList.map(item => findShopProductById(item.id, shops));
+
+  const orderList = cartList.map(item => ({
+   name: item.name,
+   price: item.price,
+   count: item.count,
+   totalByDrug: item.price * item.count,
+  }));
+
+  const totalPriceByShop = orderList.reduce(
+   (total, drug) => total + drug.totalByDrug,
+   0
+  );
+
+  const uniqueShops = [...new Set(findShop)];
+
+  const drugslist = uniqueShops.map(shop => ({
+   shop,
+   orderList: orderList.filter(
+    item => findShopProductById(item.id, shops) === shop
+   ),
+   totalPriceByShop,
+  }));
+
   const orderData = {
    ...formData,
-   drugslist: cartList.map(item => {
-    const shopProduct = findShopProductById(item.id, shops);
-    return {
-     shop: shopProduct.name,
-     name: item.name,
-     price: item.price,
-     count: item.count,
-     totalPrice: item.price * item.count,
-    };
-   }),
+   drugslist,
+   total: totalPriceByShop,
   };
 
   try {

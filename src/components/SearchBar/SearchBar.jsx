@@ -17,7 +17,7 @@ function SearchBar({ value, onChange, sortByPrice }) {
     type="text"
     value={value}
     onChange={onChange}
-    autoСomplete="off"
+    autocomplete="off"
     placeholder="Search your menicine"
    />
    <ContainerSortBtn>

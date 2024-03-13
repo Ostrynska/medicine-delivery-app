@@ -21,10 +21,14 @@ const Cart = () => {
  }, [cartList]);
 
  const findShopProductById = (id, shops) => {
-  const shopProduct = shops.find(shop =>
-   shop.drugslist.some(item => item.id === id)
-  );
-  return shopProduct ? shopProduct.name : null;
+  for (const shop of shops) {
+   for (const product of shop.drugslist) {
+    if (product.id === id) {
+     return shop.name;
+    }
+   }
+  }
+  return null;
  };
 
  const generateRandomNumber = () => {
@@ -34,29 +38,33 @@ const Cart = () => {
  const handleSubmit = async e => {
   e.preventDefault();
   const formData = formDataRef.current.getData();
-  const findShop = cartList.map(item => findShopProductById(item.id, shops));
 
   const orderList = cartList.map(item => ({
    name: item.name,
    price: item.price,
    count: item.count,
    totalByDrug: item.price * item.count,
+   id: item.id,
+  }));
+
+  const groupedOrderList = orderList.reduce((acc, item) => {
+   const shopName = findShopProductById(item.id, shops);
+   acc[shopName] = acc[shopName] || [];
+   acc[shopName].push(item);
+   console.log(acc);
+   return acc;
+  }, {});
+
+  const drugslist = Object.entries(groupedOrderList).map(([shop, items]) => ({
+   shop,
+   orderlist: items.map(item => item),
+   totalPriceByShop: items.reduce((total, drug) => total + drug.totalByDrug, 0),
   }));
 
   const totalPriceByShop = orderList.reduce(
    (total, drug) => total + drug.totalByDrug,
    0
   );
-
-  const uniqueShops = [...new Set(findShop)];
-
-  const drugslist = uniqueShops.map(shop => ({
-   shop,
-   orderList: orderList.filter(
-    item => findShopProductById(item.id, shops) === shop
-   ),
-   totalPriceByShop,
-  }));
 
   const orderData = {
    ...formData,

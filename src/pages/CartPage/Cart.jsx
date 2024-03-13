@@ -35,6 +35,8 @@ const Cart = () => {
   return Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
  };
 
+ const orderNumber = generateRandomNumber();
+
  const handleSubmit = async e => {
   e.preventDefault();
   const formData = formDataRef.current.getData();
@@ -51,7 +53,6 @@ const Cart = () => {
    const shopName = findShopProductById(item.id, shops);
    acc[shopName] = acc[shopName] || [];
    acc[shopName].push(item);
-   console.log(acc);
    return acc;
   }, {});
 
@@ -69,7 +70,8 @@ const Cart = () => {
   const orderData = {
    ...formData,
    drugslist,
-   total: totalPriceByShop,
+   total: totalPriceByShop.toFixed(2),
+   order: orderNumber,
   };
 
   try {
@@ -77,7 +79,8 @@ const Cart = () => {
    dispatch(clearCart());
    formDataRef.current.clearFormValues();
    alert(
-    `We got it! Order number: ${generateRandomNumber()}. Check your inbox shortly for a confirmation email.`
+    `    We got it! Order number: ${orderNumber}.
+    Check your inbox shortly for a confirmation email.`
    );
   } catch (error) {
    console.error('Error while adding order:', error);

@@ -9,6 +9,7 @@ import Footer from './Footer/Footer';
 
 const Home = lazy(() => import('../pages/HomePage/Home'));
 const Cart = lazy(() => import('../pages/CartPage/Cart'));
+const History = lazy(() => import('../pages/HistoryPage/History'));
 const DrugsList = lazy(() => import('./DrugsList/DrugsList'));
 
 export const App = () => {
@@ -21,6 +22,7 @@ export const App = () => {
       <Route path=":id" element={<DrugsList />} />
      </Route>
      <Route path="/cart" element={<Cart />} />
+     <Route path="/history" element={<History />} />
      <Route path="*" element={<Navigate to="/shops" replace />} />
     </Routes>
    </main>

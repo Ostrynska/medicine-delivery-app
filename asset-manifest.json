@@ -1,22 +1,24 @@
 {
   "files": {
     "main.css": "/medicine-delivery-app/static/css/main.51ac96cb.css",
-    "main.js": "/medicine-delivery-app/static/js/main.9f83299e.js",
+    "main.js": "/medicine-delivery-app/static/js/main.cf45c16d.js",
     "static/js/787.7b5e3ec0.chunk.js": "/medicine-delivery-app/static/js/787.7b5e3ec0.chunk.js",
-    "static/js/505.1cd0c47c.chunk.js": "/medicine-delivery-app/static/js/505.1cd0c47c.chunk.js",
-    "static/js/88.0a5b2162.chunk.js": "/medicine-delivery-app/static/js/88.0a5b2162.chunk.js",
+    "static/js/15.38402026.chunk.js": "/medicine-delivery-app/static/js/15.38402026.chunk.js",
+    "static/js/301.af50aeb0.chunk.js": "/medicine-delivery-app/static/js/301.af50aeb0.chunk.js",
+    "static/js/88.532ac762.chunk.js": "/medicine-delivery-app/static/js/88.532ac762.chunk.js",
     "static/media/search.png": "/medicine-delivery-app/static/media/search.3a608aca6f4d314714c4.png",
     "static/media/add-to-favorite.png": "/medicine-delivery-app/static/media/add-to-favorite.92d8aeab5af46f5182f0.png",
     "static/media/remove-from-favorite.png": "/medicine-delivery-app/static/media/remove-from-favorite.d0cbd94e0a4a62fc2bf4.png",
     "index.html": "/medicine-delivery-app/index.html",
     "main.51ac96cb.css.map": "/medicine-delivery-app/static/css/main.51ac96cb.css.map",
-    "main.9f83299e.js.map": "/medicine-delivery-app/static/js/main.9f83299e.js.map",
+    "main.cf45c16d.js.map": "/medicine-delivery-app/static/js/main.cf45c16d.js.map",
     "787.7b5e3ec0.chunk.js.map": "/medicine-delivery-app/static/js/787.7b5e3ec0.chunk.js.map",
-    "505.1cd0c47c.chunk.js.map": "/medicine-delivery-app/static/js/505.1cd0c47c.chunk.js.map",
-    "88.0a5b2162.chunk.js.map": "/medicine-delivery-app/static/js/88.0a5b2162.chunk.js.map"
+    "15.38402026.chunk.js.map": "/medicine-delivery-app/static/js/15.38402026.chunk.js.map",
+    "301.af50aeb0.chunk.js.map": "/medicine-delivery-app/static/js/301.af50aeb0.chunk.js.map",
+    "88.532ac762.chunk.js.map": "/medicine-delivery-app/static/js/88.532ac762.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.51ac96cb.css",
-    "static/js/main.9f83299e.js"
+    "static/js/main.cf45c16d.js"
   ]
 }

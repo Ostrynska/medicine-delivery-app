@@ -17,8 +17,9 @@ import {
  InputWrapp,
  PriceText,
  ButtonDelete,
+ Image,
+ Price,
 } from './CartList.styled';
-import { ImageWrapp, PriceWrapp } from '../DrugsItem/DrugsItem.styled';
 
 const CartList = () => {
  const dispatch = useDispatch();
@@ -57,13 +58,13 @@ const CartList = () => {
     <ul>
      {cartList.map(({ id, name, photo, count }) => (
       <li key={id}>
-       <ImageWrapp>
-        <img src={photo} alt={name} width={100} height={100} />
-       </ImageWrapp>
+       <Image>
+        <img src={photo} alt={name} width={100} />
+       </Image>
 
        <Content>
         <h3>{name}</h3>
-        <PriceWrapp>
+        <Price>
          <Text>Count:</Text>
          <InputWrapp>
           <Input
@@ -77,7 +78,7 @@ const CartList = () => {
            Remove
           </ButtonDelete>
          </InputWrapp>
-        </PriceWrapp>
+        </Price>
        </Content>
       </li>
      ))}

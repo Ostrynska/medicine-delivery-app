@@ -44,13 +44,7 @@ const DrugsItem = ({ drug }) => {
  return (
   <DrugWrapp>
    <ImageWrapp>
-    <img
-     src={drug.photo}
-     alt={drug.name}
-     width={300}
-     height={200}
-     loading="lazy"
-    />
+    <img src={drug.photo} alt={drug.name} width={300} loading="lazy" />
    </ImageWrapp>
    <h3>{drug.name}</h3>
    <button onClick={() => toggleFavorite(drug.id)}>

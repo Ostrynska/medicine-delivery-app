@@ -24,16 +24,7 @@ const Home = () => {
   <>
    <h1 hidden>Medicine Delivery Shops</h1>
    <section>
-    <HomeWrapp
-     style={{
-      backgroundImage: backgroundLoaded
-       ? 'none'
-       : "url('https://png.pngtree.com/png-clipart/20230927/original/pngtree-medicine-ordering-mobile-app-concept-of-healthcare-drugstore-and-online-pharmacy-png-image_13159766.png')",
-      backgroundSize: '699px 588px',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'right',
-     }}
-    >
+    <HomeWrapp backgroundLoaded={backgroundLoaded}>
      <ShopsWrapp>
       <h2>Shops</h2>
       <ul>

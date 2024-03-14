@@ -9,11 +9,29 @@ export const DrugWrapp = styled.li`
 
  padding: 1.5rem;
  border: 1px solid rgba(0, 0, 0, 0.1);
- max-height: 480px;
+ max-height: 429px;
  max-width: 100%;
+ width: 326px;
  background-color: white;
  transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1) 0s;
  cursor: pointer;
+ @media screen and (min-width: 576px) {
+  max-height: 389px;
+  width: 245px;
+ }
+ @media screen and (min-width: 768px) {
+  max-height: 397px;
+  width: 335px;
+ }
+ @media screen and (min-width: 1200px) {
+  padding: 1.5rem;
+  width: 390px;
+  max-height: 480px;
+  justify-content: center;
+ }
+ @media screen and (min-width: 1400px) {
+  width: 400px;
+ }
  > h3 {
   text-transform: capitalize;
  }
@@ -56,10 +74,14 @@ export const Line = styled.hr`
 export const TextWrapp = styled.div`
  overflow-y: scroll;
  max-width: 340px;
+
  > p {
   font-size: 14px;
-  margin: 1rem 0px 0.5rem;
+  margin-top: 1rem;
   font-family: Raleway, sans-serif;
+  @media screen and (min-width: 1200px) {
+   margin: 1rem 0px 0.5rem;
+  }
  }
 `;
 
@@ -78,11 +100,23 @@ export const ImageWrapp = styled.div`
  display: flex;
  justify-content: center;
  > img {
-  object-fit: cover;
   max-width: 100%;
+  height: 180px;
   display: flex;
   align-items: center;
+  object-fit: cover;
   transition: transform 0.15s ease-in-out;
+  @media screen and (min-width: 576px) {
+   height: 118px;
+  }
+  @media screen and (min-width: 768px) {
+   height: 150px;
+   object-fit: contain;
+  }
+  @media screen and (min-width: 1200px) {
+   object-fit: cover;
+   height: 233px;
+  }
   &:hover {
    transform: scale(1.05);
   }
@@ -92,11 +126,15 @@ export const ImageWrapp = styled.div`
 export const Button = styled.button`
  padding: 8px 20px;
  border-radius: 4px;
+ font-size: 14px;
  text-decoration: none;
  color: white;
  background-color: orangered;
  font-weight: 500;
  transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+ @media screen and (min-width: 1200px) {
+  font-size: 16px;
+ }
 
  &:hover,
  &:focus {

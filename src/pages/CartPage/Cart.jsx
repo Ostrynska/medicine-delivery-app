@@ -47,6 +47,7 @@ const Cart = () => {
    count: item.count,
    totalByDrug: item.price * item.count,
    id: item.id,
+   photo: item.photo,
   }));
 
   const groupedOrderList = orderList.reduce((acc, item) => {

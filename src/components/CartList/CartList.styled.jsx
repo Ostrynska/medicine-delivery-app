@@ -1,10 +1,35 @@
 import styled from 'styled-components';
+import { ImageWrapp, PriceWrapp } from '../DrugsItem/DrugsItem.styled';
+
+export const Price = styled(PriceWrapp)`
+ align-items: baseline;
+ @media screen and (min-width: 576px) {
+  align-items: center;
+ }
+`;
+
+export const Image = styled(ImageWrapp)`
+ width: 150px;
+ height: 100px;
+ > img {
+  height: 100px;
+  object-fit: contain;
+ }
+`;
 
 export const CartWrapp = styled.div`
- margin-left: 120px;
- padding: 1.5rem 0;
- width: 696px;
-
+ padding: 1rem 0;
+ width: 100%;
+ @media screen and (min-width: 576px) {
+  padding: 1.5rem 0;
+ }
+ @media screen and (min-width: 1200px) {
+  margin-left: 120px;
+  width: 696px;
+ }
+ @media screen and (min-width: 1400px) {
+  width: 868px;
+ }
  > h2 {
   padding: 0 0 20px 0;
   text-transform: uppercase;
@@ -15,8 +40,11 @@ export const CartWrapp = styled.div`
  }
  > ul {
   margin-top: 34px;
-  height: 510px;
+  height: 350px;
   overflow-y: scroll;
+  @media screen and (min-width: 576px) {
+   height: 510px;
+  }
   > li {
    display: flex;
 
@@ -41,9 +69,12 @@ export const CartWrapp = styled.div`
 export const Content = styled.div`
  display: flex;
  flex-direction: column;
- padding: 0 0 0 28px;
+ padding: 0 0 0 18px;
  width: 100%;
  justify-content: space-evenly;
+ @media screen and (min-width: 576px) {
+  padding: 0 0 0 28px;
+ }
  > h3 {
   text-transform: capitalize;
  }
@@ -91,27 +122,46 @@ export const ButtonDelete = styled(Button)`
 `;
 
 export const Input = styled.input`
- margin-left: 20px;
- width: 90px;
+ margin-left: 30px;
+ width: 70px;
  padding: 8px 12px;
  border-radius: 8px;
  border: 1px solid #ccc;
  color: rgb(63, 63, 63);
- margin-right: 10px;
- transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1) 0s;
 
+ transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+ @media screen and (min-width: 576px) {
+  margin-right: 10px;
+  margin-left: 20px;
+  width: 90px;
+ }
  &:hover,
  &:focus {
   border-color: orangered;
  }
 `;
 
-export const InputWrapp = styled.div``;
+export const InputWrapp = styled.div`
+ display: flex;
+ flex-direction: column;
+ gap: 5px;
+ @media screen and (min-width: 576px) {
+  flex-direction: row;
+  gap: 0px;
+ }
+`;
 
 export const PriceText = styled.p`
  margin: 56px 0 0 0;
+
  font-size: 18px;
  font-weight: 500;
+ @media screen and (min-width: 576px) {
+  margin: 46px 0 0 0;
+ }
+ @media screen and (min-width: 768px) {
+  margin: 56px 0 0 0;
+ }
  > span {
   color: orangered;
  }

@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 export const FormContainer = styled.form`
- width: 350px;
+ width: 100%;
  padding: 1.5rem 0;
+ @media screen and (min-width: 1200px) {
+  width: 350px;
+ }
  > h2 {
   width: 200px;
   padding: 0 0 5px 0;
@@ -15,8 +18,11 @@ export const FormContainer = styled.form`
 `;
 
 export const FormGroup = styled.div`
- margin-top: 20px;
+ margin-top: 5px;
  transition: all 250ms ease-in-out 0s;
+ @media screen and (min-width: 1200px) {
+  margin-top: 20px;
+ }
  &:hover,
  &:focus {
   color: orangered;

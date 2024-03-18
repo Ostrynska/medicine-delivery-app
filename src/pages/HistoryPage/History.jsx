@@ -5,6 +5,7 @@ import Loader from '../../components/Loader/Loader';
 import iconSearch from '../../assets/images/search.png';
 import {
  HistoryWrapp,
+ Line,
  SearchIcon,
  SearchInput,
  SearchWrapp,
@@ -16,8 +17,12 @@ import {
  ResultsItemOrderInf,
  ResultsItemTitle,
  ResultsItemUserInf,
+ OrderList,
  OrderItem,
+ OrderItemInf,
+ OrderItemInfTotal,
  OrderItemImageWrapp,
+ TotalWrapp,
 } from './History.styled';
 
 const History = () => {
@@ -97,40 +102,39 @@ const History = () => {
            <p>{order.phone}</p>
           </ResultsItemUserInf>
          </ResultsItemOrderInf>
-         <div>
-          <ShopOrderList>
-           {order.drugslist.map(item => (
-            <ShopOrderItem key={item.id}>
-             <h4>Shop: {item.shop}</h4>
-             <ul>
-              {item.orderlist.map(drug => (
-               <OrderItem key={drug.id}>
-                <OrderItemImageWrapp>
-                 <img src={drug.photo} alt={drug.name} loading="lazy" />
-                </OrderItemImageWrapp>
-
-                <div>
-                 <h5>{drug.name}</h5>
-                 <p>
-                  Count: <span>{drug.count}</span>
-                 </p>
-                 <p>
-                  Price: <span>{drug.totalByDrug}</span>
-                 </p>
-                </div>
-               </OrderItem>
-              ))}
+         <ShopOrderList>
+          {order.drugslist.map(item => (
+           <ShopOrderItem key={item.id}>
+            <h4>{item.shop}</h4>
+            <Line />
+            <OrderList>
+             {item.orderlist.map(drug => (
+              <OrderItem key={drug.id}>
+               <OrderItemImageWrapp>
+                <img src={drug.photo} alt={drug.name} loading="lazy" />
+               </OrderItemImageWrapp>
+               <OrderItemInf>
+                <h5>{drug.name}</h5>
+                <p>
+                 Price: <span>{drug.totalByDrug}</span>
+                </p>
+               </OrderItemInf>
+              </OrderItem>
+             ))}
+             <OrderItemInfTotal>
               <p>
-               Total by shop: <span>{item.totalPriceByShop}</span>
+               Total: <span>{item.totalPriceByShop}</span>
               </p>
-             </ul>
-            </ShopOrderItem>
-           ))}
-          </ShopOrderList>
-         </div>
-         <p>
-          Total: <span>{order.total}</span>
-         </p>
+             </OrderItemInfTotal>
+            </OrderList>
+           </ShopOrderItem>
+          ))}
+         </ShopOrderList>
+         <TotalWrapp>
+          <p>
+           Total: <span>{order.total}</span>
+          </p>
+         </TotalWrapp>
         </ResultsItem>
        ))}
       </ResultsList>

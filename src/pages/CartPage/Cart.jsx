@@ -60,7 +60,9 @@ const Cart = () => {
   const drugslist = Object.entries(groupedOrderList).map(([shop, items]) => ({
    shop,
    orderlist: items.map(item => item),
-   totalPriceByShop: items.reduce((total, drug) => total + drug.totalByDrug, 0),
+   totalPriceByShop: items
+    .reduce((total, drug) => total + Number(drug.totalByDrug), 0)
+    .toFixed(2),
   }));
 
   const totalPriceByShop = orderList.reduce(

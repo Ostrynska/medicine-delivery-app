@@ -24,7 +24,7 @@ const Home = () => {
   <>
    <h1 hidden>Medicine Delivery Shops</h1>
    <section>
-    <HomeWrapp backgroundLoaded={backgroundLoaded}>
+    <HomeWrapp $backgroundLoaded={backgroundLoaded}>
      <ShopsWrapp>
       <h2>Shops</h2>
       <ul>

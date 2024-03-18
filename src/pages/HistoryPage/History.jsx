@@ -8,6 +8,16 @@ import {
  SearchIcon,
  SearchInput,
  SearchWrapp,
+ SearchResultsWrapp,
+ ShopOrderList,
+ ShopOrderItem,
+ ResultsList,
+ ResultsItem,
+ ResultsItemOrderInf,
+ ResultsItemTitle,
+ ResultsItemUserInf,
+ OrderItem,
+ OrderItemImageWrapp,
 } from './History.styled';
 
 const History = () => {
@@ -75,50 +85,60 @@ const History = () => {
      <Loader />
     ) : searchResults.length > 0 ? (
      <div>
-      <h2>Search Results:</h2>
-      <ul>
+      <ResultsList>
        {searchResults.map(order => (
-        <li key={order.id}>
-         <h3>Order #{order.order}</h3>
+        <ResultsItem key={order.id}>
+         <ResultsItemOrderInf>
+          <ResultsItemTitle>Order #{order.order}</ResultsItemTitle>
+          <ResultsItemUserInf>
+           <h3>User information:</h3>
+           <p>{order.name}</p>
+           <p>{order.email}</p>
+           <p>{order.phone}</p>
+          </ResultsItemUserInf>
+         </ResultsItemOrderInf>
          <div>
-          <h4>User information:</h4>
-          <p>{order.name}</p>
-          <p>{order.email}</p>
-          <p>{order.phone}</p>
-         </div>
-         <div>
-          <ul>
+          <ShopOrderList>
            {order.drugslist.map(item => (
-            <li key={item.id}>
-             <h5>Shop: {item.shop}</h5>
+            <ShopOrderItem key={item.id}>
+             <h4>Shop: {item.shop}</h4>
              <ul>
-              Order:
               {item.orderlist.map(drug => (
-               <li key={drug.id}>
-                <img src={drug.photo} alt={drug.name} loading="lazy" />
-                <h6>{drug.name}</h6>
-                <p>
-                 Price: <span>{drug.totalByDrug}</span>
-                </p>
-               </li>
+               <OrderItem key={drug.id}>
+                <OrderItemImageWrapp>
+                 <img src={drug.photo} alt={drug.name} loading="lazy" />
+                </OrderItemImageWrapp>
+
+                <div>
+                 <h5>{drug.name}</h5>
+                 <p>
+                  Count: <span>{drug.count}</span>
+                 </p>
+                 <p>
+                  Price: <span>{drug.totalByDrug}</span>
+                 </p>
+                </div>
+               </OrderItem>
               ))}
               <p>
                Total by shop: <span>{item.totalPriceByShop}</span>
               </p>
              </ul>
-            </li>
+            </ShopOrderItem>
            ))}
-          </ul>
+          </ShopOrderList>
          </div>
          <p>
           Total: <span>{order.total}</span>
          </p>
-        </li>
+        </ResultsItem>
        ))}
-      </ul>
+      </ResultsList>
      </div>
     ) : (
-     <h2>No search results found.</h2>
+     <SearchResultsWrapp>
+      <h2>No search results found.</h2>
+     </SearchResultsWrapp>
     )}
    </section>
   </HistoryWrapp>

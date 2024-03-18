@@ -4,13 +4,12 @@ import { NavLink } from 'react-router-dom';
 export const HomeWrapp = styled.div`
  min-height: 88vh;
  display: flex;
- ${'' /* justify-content: center; */}
  flex-direction: column;
  gap: 8px;
  width: 100%;
  padding-bottom: 8px;
- background-image: ${({ backgroundLoaded }) =>
-  backgroundLoaded
+ background-image: ${({ $backgroundLoaded }) =>
+  $backgroundLoaded
    ? 'none'
    : "url('https://png.pngtree.com/png-clipart/20230927/original/pngtree-medicine-ordering-mobile-app-concept-of-healthcare-drugstore-and-online-pharmacy-png-image_13159766.png')"};
  background-size: 300px 230px;

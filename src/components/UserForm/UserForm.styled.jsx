@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const ErrorText = styled.p`
+ color: orangered;
+ font-size: 12px;
+`;
+
 export const FormContainer = styled.form`
  width: 100%;
  padding: 1.5rem 0;
